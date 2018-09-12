@@ -1,15 +1,15 @@
-import Vue from "vue"
-
-import styles from "./style/index.scss"
-import Home from "./pages/home.vue"
-import _ from "lodash"
+import Vue from 'vue'
+import Home from './pages/home.vue'
+import _ from 'lodash'
+require('./style/index.scss')
 
 console.log(_.add(1, 2))
 
-const App = new Vue({
-  el: "#app",
-  name: "App",
+/* eslint-disable-next-line */
+let app = new Vue({
+  el: '#app',
+  name: 'App',
   render: h => h(Home)
 })
 
-console.log("Hello world")
+console.log('Hello world')
