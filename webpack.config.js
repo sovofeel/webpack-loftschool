@@ -30,14 +30,17 @@ module.exports = {
             js: "babel-loader"
           }
         }
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {}
+          }
+        ]
       }
     ]
-  },
-  resolve: {
-    alias: {
-      vue$: "vue/dist/vue.esm.js"
-    },
-    extensions: ["*", ".js", ".vue", ".json"]
   },
   plugins: [
     new HtmlWebpackPlugin({
