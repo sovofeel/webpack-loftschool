@@ -16,7 +16,7 @@ const buildingForLocal = () => {
 module.exports = {
   entry: {
     build: path.join(setPath('src'), 'index.js'),
-    vendor: ['lodash']
+    vendor: ['lodash', 'vue']
   },
   output: {
     path: buildingForLocal() ? path.resolve(__dirname) : setPath('dist'),
