@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const NODE_ENV = process.env.NODE_ENV
 const path = require('path')
 
@@ -83,6 +84,7 @@ module.exports = {
       title: 'Hello Loftshool',
       template: 'src/index.html'
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new FaviconsWebpackPlugin('./src/assets/img/favicon.png')
   ]
 }
