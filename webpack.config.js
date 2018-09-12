@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const { VueLoaderPlugin } = require("vue-loader")
 
 module.exports = {
   module: {
@@ -20,12 +21,30 @@ module.exports = {
             presets: ["@babel/preset-env"]
           }
         }
+      },
+      {
+        test: /\.vue$/,
+        loader: "vue-loader",
+        options: {
+          loaders: {
+            js: "babel-loader"
+          }
+        }
       }
     ]
   },
+  resolve: {
+    alias: {
+      vue$: "vue/dist/vue.esm.js"
+    },
+    extensions: ["*", ".js", ".vue", ".json"]
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Loftshool"
-    })
+      hash: true,
+      title: "Hello Loftshool",
+      template: "src/index.html"
+    }),
+    new VueLoaderPlugin()
   ]
 }
